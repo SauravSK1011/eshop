@@ -1,8 +1,5 @@
-import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:eshop/core/providers/UserDataProvider.dart';
-import 'package:eshop/presentation/category/CategoryScreen.dart';
-import 'package:eshop/presentation/home/HomeScreen.dart';
-import 'package:eshop/utils/constants.dart';
+import 'package:eshop/presentation/splash%20screen/SplashScreen.dart';
 import 'package:eshop/widgets/mybottomNavigationBar.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -17,8 +14,9 @@ class ProfileScreen extends StatelessWidget {
     return Scaffold(
         appBar: AppBar(
           title: Text(
-            "E-Shop",
-            style: TextStyle(color: mainblue, fontWeight: FontWeight.bold),
+            "Profile",
+            style: TextStyle(
+                color: Colors.black, fontWeight: FontWeight.bold, fontSize: 30),
           ),
         ),
         body: Consumer<UserDataProvider>(builder: (BuildContext context,
@@ -30,24 +28,15 @@ class ProfileScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                ClipRRect(
-                  borderRadius: BorderRadius.circular(175),
-                  child: Image.network(
-                    userdataprovider.users!.image ??
-                        "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png",
-                    width: 175,
-                    height: 175,
-                  ),
-                ),
                 Column(
                   children: [
                     Text(
-                      userdataprovider.users!.name ?? "",
+                      userdataprovider.users!.name,
                       style:
                           TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
                     ),
                     Text(
-                      userdataprovider.users!.email ?? "",
+                      userdataprovider.users!.email,
                       style:
                           TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
                     ),
@@ -59,9 +48,13 @@ class ProfileScreen extends StatelessWidget {
                           borderRadius: BorderRadius.circular(10.0)),
                       backgroundColor: Color(0xff303F60),
                     ),
-                    onPressed: () {},
+                    onPressed: () async{
+                     await context.read<UserDataProvider>().deletuserdata();
+                    if(context.mounted){  Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => SplashScreen()));}
+                    },
                     child: const Padding(
-                      padding:  EdgeInsets.all(15.0),
+                      padding: EdgeInsets.all(15.0),
                       child: Text(
                         "Logout",
                         style: TextStyle(

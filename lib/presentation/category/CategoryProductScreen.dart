@@ -11,14 +11,13 @@ class CategoryProductScreen extends StatelessWidget {
   final String category;
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
 
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
           title: Text(
-            "E-Shop",
-            style: TextStyle(color: mainblue, fontWeight: FontWeight.bold),
+            "Category Product",
+            style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold,fontSize: 20),
           ),
         ),
         body: Column(

@@ -11,7 +11,7 @@ class MybottomNavigationBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CurvedNavigationBar(
-      index: 2,
+      index: index,
       backgroundColor: mainblue,
       color: Colors.white,
       items: <Widget>[
