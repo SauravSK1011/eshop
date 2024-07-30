@@ -1,16 +1,50 @@
-# eshop
+# E-Commerce App
+
+## Download App
+
 Download App:- https://drive.google.com/file/d/1tVi0yiytAYyD4nzslbIaOgJNH_2AncSt/view?usp=sharing
-A new Flutter project.
 
-## Getting Started
+## Overview
 
-This project is a starting point for a Flutter application.
+This is an e-commerce app built using Flutter. The app utilizes Firebase Authentication for user login, Firebase Firestore for storing user details, Firebase Remote Config to toggle price display, and fetches products from [DummyJSON](https://dummyjson.com/products). 
 
-A few resources to get you started if this is your first Flutter project:
+## Features
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- **Firebase Authentication:** Allows users to sign up and log in using email.
+- **User Details Collection:** Collects and stores user details (name, email) in Firestore.
+- **Product Feed:** Displays a list of products fetched from the DummyJSON API.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Screens
+
+The app includes the following screens:
+- **Login Screen:** Users can log in using their email.
+- **Signup Screen:** Users can sign up by providing their name, email, and password.
+- **Product Feed Screen:** Displays the list of products.
+
+## Dependencies
+
+- Flutter >= v2.2.0
+- Firebase Authentication
+- Firebase Firestore
+- Firebase Remote Config
+- Provider for state management
+
+##Video
+Youtube Video:- https://youtu.be/59LEOFD23t0
+
+## Installation
+
+Cloning this repository
+
+```bash
+  $ git clone https://github.com/SauravSK1011/eshop.git
+```
+**Installing dependencies**
+```bash
+flutter pub get
+```
+
+With all dependencies installed  you can run the app
+ ```bash
+flutter run
+```
