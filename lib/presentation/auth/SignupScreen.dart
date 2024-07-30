@@ -24,11 +24,13 @@ class _SignupScreenState extends State<SignupScreen> {
             r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
         .hasMatch(emailController.text);
     if (emailValid && passwordController.text.isNotEmpty) {
-      await AuthServices().signUpUser(context: context,
+      await AuthServices().signUpUser(
+          context: context,
           name: nameController.text,
           email: emailController.text,
           password: passwordController.text);
-          Navigator.of(context).push(MaterialPageRoute(builder: (context)=>HomeScreen()));
+      Navigator.of(context)
+          .push(MaterialPageRoute(builder: (context) => HomeScreen()));
     } else {
       shotToast("Email or Password Empty", Colors.red);
     }

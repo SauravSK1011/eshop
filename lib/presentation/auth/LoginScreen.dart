@@ -6,7 +6,6 @@ import 'package:eshop/presentation/home/HomeScreen.dart';
 import 'package:eshop/presentation/auth/Widget/MyButton.dart';
 import 'package:eshop/presentation/auth/Widget/MyTextfield.dart';
 import 'package:flutter/material.dart';
-import 'package:fluttertoast/fluttertoast.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -41,7 +40,6 @@ class _LoginScreenState extends State<LoginScreen> {
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
 
     return Scaffold(
       appBar: AppBar(
