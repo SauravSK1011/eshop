@@ -3,8 +3,11 @@ import 'package:eshop/core/models/ProductModel.dart';
 import 'package:eshop/core/providers/ProductProvider.dart';
 import 'package:eshop/core/providers/UserDataProvider.dart';
 import 'package:eshop/core/services/ProductService.dart';
+import 'package:eshop/presentation/category/CategoryScreen.dart';
 import 'package:eshop/presentation/home/Widget/ProductCard.dart';
+import 'package:eshop/presentation/profile/ProfileScreen.dart';
 import 'package:eshop/utils/constants.dart';
+import 'package:eshop/widgets/mybottomNavigationBar.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -47,7 +50,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ? Scaffold(
                   backgroundColor: Colors.black.withOpacity(0.2),
                   appBar: AppBar(
-                    title: Text("e-shop"),
+                    title: Text("Home"),
                   ),
                   body: Container(
                     child: SingleChildScrollView(
@@ -110,21 +113,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 );
         },
       ),
-      bottomNavigationBar: CurvedNavigationBar(
-        backgroundColor: mainblue,
-        color: Colors.white,
-        items: <Widget>[
-          Icon(Icons.home, size: 30),
-          Icon(Icons.category, size: 30),
-          Icon(Icons.person, size: 30),
-        ],
-        onTap: (index) {
-          if (index == 0) {
-            Navigator.of(context).pushReplacement(
-                MaterialPageRoute(builder: (context) => HomeScreen()));
-          }
-        },
-      ),
+      bottomNavigationBar: MybottomNavigationBar(index: 0,)
     );
   }
 }
