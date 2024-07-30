@@ -2,7 +2,6 @@ import 'package:eshop/core/models/ProductModel.dart';
 import 'package:eshop/core/providers/ProductProvider.dart';
 import 'package:eshop/core/providers/UserDataProvider.dart';
 import 'package:eshop/presentation/home/Widget/ProductCard.dart';
-import 'package:eshop/utils/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 

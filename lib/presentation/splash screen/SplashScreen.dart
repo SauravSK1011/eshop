@@ -13,7 +13,7 @@ class SplashScreen extends StatelessWidget {
       future: userDataProvider.loadUserData(),
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
-          return Scaffold(
+          return const Scaffold(
             body: Column(
               children: [
                 Text("E-shop"),
@@ -23,7 +23,6 @@ class SplashScreen extends StatelessWidget {
           );
         } else {
           if (userDataProvider.users != null) {
-            // Navigate to Home Screen
             WidgetsBinding.instance.addPostFrameCallback((_) {
               Navigator.pushReplacement(
                 context,

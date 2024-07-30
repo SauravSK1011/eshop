@@ -3,7 +3,6 @@ import 'package:eshop/core/providers/UserDataProvider.dart';
 import 'package:eshop/presentation/home/Widget/ProductCard.dart';
 import 'package:eshop/utils/constants.dart';
 import 'package:eshop/widgets/mybottomNavigationBar.dart';
-import 'package:firebase_remote_config/firebase_remote_config.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 

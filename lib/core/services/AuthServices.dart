@@ -6,10 +6,9 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 class AuthServices {
-
   final FirebaseAuth _auth = FirebaseAuth.instance;
-  Future<void> loginUser({    required BuildContext context,
-
+  Future<bool> loginUser({
+    required BuildContext context,
     required String email,
     required String password,
   }) async {
@@ -18,17 +17,18 @@ class AuthServices {
         email: email,
         password: password,
       );
-         if (context.mounted) {
+      if (context.mounted) {
         context.read<UserDataProvider>().fetchUsers(userCredential.user!.uid);
       }
-      print(userCredential.user!.email);
+      return true;
     } on FirebaseAuthException catch (err) {
-      print(err);
-      shotToast(err.toString(), Colors.red);
+      shotToast(err.message.toString(), Colors.red);
+
+      return false;
     }
   }
 
-  Future<void> signUpUser({
+  Future<bool> signUpUser({
     required BuildContext context,
     required String email,
     required String password,
@@ -44,8 +44,10 @@ class AuthServices {
       if (context.mounted) {
         context.read<UserDataProvider>().addUser(userData);
       }
+      return true;
     } on FirebaseAuthException catch (err) {
       shotToast(err.toString(), Colors.red);
+      return false;
     }
   }
 }

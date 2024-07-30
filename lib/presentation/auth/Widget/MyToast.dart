@@ -16,6 +16,6 @@ shotToast(String text, Color color) {
       gravity: ToastGravity.CENTER,
       timeInSecForIosWeb: 1,
       backgroundColor: color,
-      textColor: color,
+      textColor: Colors.white,
       fontSize: 16.0);
 }

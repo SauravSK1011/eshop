@@ -1,7 +1,6 @@
 import 'package:eshop/core/providers/PriceProvider.dart';
 import 'package:eshop/core/providers/ProductProvider.dart';
 import 'package:eshop/core/providers/UserDataProvider.dart';
-import 'package:eshop/presentation/auth/LoginScreen.dart';
 import 'package:eshop/presentation/splash%20screen/SplashScreen.dart';
 import 'package:eshop/utils/constants.dart';
 import 'package:firebase_core/firebase_core.dart';

@@ -1,7 +1,6 @@
 import 'package:eshop/core/providers/ProductProvider.dart';
 import 'package:eshop/core/providers/UserDataProvider.dart';
 import 'package:eshop/presentation/category/CategoryProductScreen.dart';
-import 'package:eshop/utils/constants.dart';
 import 'package:eshop/widgets/mybottomNavigationBar.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';

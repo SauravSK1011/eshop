@@ -22,12 +22,16 @@ class _LoginScreenState extends State<LoginScreen> {
             r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
         .hasMatch(emailController.text);
     if (emailValid && passwordController.text.isNotEmpty) {
-      await AuthServices().loginUser(context: context,
-          email: emailController.text, password: passwordController.text);
-                    Navigator.of(context).push(MaterialPageRoute(builder: (context)=>HomeScreen()));
-
+      bool status = await AuthServices().loginUser(
+          context: context,
+          email: emailController.text,
+          password: passwordController.text);
+      if (status) {
+        Navigator.of(context)
+            .push(MaterialPageRoute(builder: (context) => HomeScreen()));
+      }
     } else {
-      shotToast("Email or Password Empty", Colors.red);
+      shotToast("Email or Password is not formated", Colors.red);
     }
   }
 
@@ -40,7 +44,6 @@ class _LoginScreenState extends State<LoginScreen> {
 
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       appBar: AppBar(
         title: Text(
