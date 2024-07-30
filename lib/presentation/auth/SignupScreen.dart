@@ -30,7 +30,7 @@ class _SignupScreenState extends State<SignupScreen> {
           email: emailController.text,
           password: passwordController.text);
       Navigator.of(context)
-          .push(MaterialPageRoute(builder: (context) => HomeScreen()));
+          .pushReplacement(MaterialPageRoute(builder: (context) => HomeScreen()));
     } else {
       shotToast("Email or Password Empty", Colors.red);
     }

@@ -28,7 +28,7 @@ class _LoginScreenState extends State<LoginScreen> {
           password: passwordController.text);
       if (status) {
         Navigator.of(context)
-            .push(MaterialPageRoute(builder: (context) => HomeScreen()));
+            .pushReplacement(MaterialPageRoute(builder: (context) => HomeScreen()));
       }
     } else {
       shotToast("Email or Password is not formated", Colors.red);
